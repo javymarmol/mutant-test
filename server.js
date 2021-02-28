@@ -1,7 +1,7 @@
-const { request } = require("./app");
-
 const app = require('./app');
+const config = require('./config');
 
-app.listen(5332, () => {
-    console.log('The server is running in the port: 5332!')
-})
+app.listen(config.api.port, () => {
+  // eslint-disable-next-line no-console
+  console.log(`The server is running on port: ${config.api.port}!`);
+});
