@@ -1,0 +1,32 @@
+{
+  "name": "mutant-test",
+  "version": "1.0.0",
+  "description": "Mutant test DNA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/javymarmol/mutant-test.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Javascript"
+  ],
+  "author": "Heyner Javier Marmol <contacto@javymarmol.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javymarmol/mutant-test/issues"
+  },
+  "homepage": "https://github.com/javymarmol/mutant-test#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
