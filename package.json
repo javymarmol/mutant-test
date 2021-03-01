@@ -4,7 +4,7 @@
   "description": "Mutant test DNA",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "NODE_ENV=production node server",
     "dev": "DEBUG=mutan-test:* nodemon server",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint"
