@@ -1,4 +1,4 @@
-const { TestScheduler } = require('jest');
+/* eslint-disable no-console */
 const request = require('supertest');
 const app = require('../app');
 
@@ -14,7 +14,7 @@ describe('testing our server', () => {
     try {
       const response = await request(app).post('/mutant')
         .set({ 'Content-Type': 'application/json' })
-        .send({ "dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"] });
+        .send({ dna: ['ATGCGA', 'CAGTGC', 'TTATGT', 'AGAAGG', 'CCCCTA', 'TCACTG'] });
       expect(response.statusCode).toBe(200);
     } catch (e) {
       console.log('error', e);
@@ -26,7 +26,7 @@ describe('testing our server', () => {
     try {
       const response = await request(app).post('/mutant')
         .set({ 'Content-Type': 'application/json' })
-        .send({ "dna":["ATGCGA","CTGTGC","TTATGT","AGAAAG","CCCGTA","TCACTG"] });
+        .send({ dna: ['ATGCGA', 'CTGTGC', 'TTATGT', 'AGAAAG', 'CCCGTA', 'TCACTG'] });
       expect(response.statusCode).toBe(403);
     } catch (e) {
       console.log('error', e);
@@ -39,7 +39,7 @@ describe('testing our server', () => {
     try {
       const response = await request(app).post('/mutant')
         .set({ 'Content-Type': 'application/json' })
-        .send({ "dna":["ATGBGA","CTGTGC","TTATGT","AGAAAG","CCCGTA","TCACTG"] });
+        .send({ dna: ['ATGBGA', 'CTGTGC', 'TTATGT', 'AGAAAG', 'CCCGTA', 'TCACTG'] });
       expect(response.statusCode).toBe(400);
     } catch (e) {
       console.log('error', e);
