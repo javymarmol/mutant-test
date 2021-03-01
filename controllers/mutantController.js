@@ -3,14 +3,14 @@ const db = require('../lib/db/init');
 
 const MutantController = {};
 
-MutantController.isMutant = async (req, resp) => {
+MutantController.validateDNA = async (req, resp) => {
   const { dna } = req.body;
 
   const { DNA } = await db.init();
   let result;
   let dnaObject = await DNA.findByDNA(JSON.stringify(dna));
   if (!dnaObject) {
-    result = await MutantService.checkDNA(dna);
+    result = MutantService.isMutant(dna);
     dnaObject = {
       dna: JSON.stringify(dna),
       isMutant: result,

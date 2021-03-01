@@ -1,5 +1,6 @@
 const express = require('express');
 const routerMutant = require('./routes/mutant');
+const routerStats = require('./routes/stats');
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/mutant', routerMutant);
+app.use('/stats', routerStats);
 
 module.exports = app;
