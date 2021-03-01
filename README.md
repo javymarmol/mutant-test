@@ -103,8 +103,11 @@ La documentación fue realizada con swagger y la puede encontrar en la raíz de 
 #### RUTAS DEL SERVIDOR
 
 ```
-GET → / {
-description:'Documentación'
+GET → / 
+"response": {
+    "200": description:'Documentation'
+    HTML Page
+
 ```
 ```
 POST → /mutant {
@@ -138,13 +141,13 @@ GET → /stats/
 Parameters: No parameters,
 description: "Get stats from test mutants"ratio'
 
-responses:
-"200": description: "successful operation"
+responses: {
+    "200": description: "successful operation"
     {
         "count_mutant_dna": 4,
         "count_human_dna": 2,
         "ratio": 0.5
     }
-
+}
 ```
 
