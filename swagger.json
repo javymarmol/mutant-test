@@ -1,0 +1,129 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Test para validar ADN mutante",
+    "version": "1.0.0",
+    "title": "Mutant test DNA",
+    "contact": {
+      "email": "contacto@javymarmol.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "mutant",
+      "description": "Test DNA",
+      "externalDocs": {
+        "description": "Github",
+        "url": "https://github.com/javymarmol/mutant-test"
+      }
+    },
+    {
+      "name": "stats",
+      "description": "Stats"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/mutant": {
+      "post": {
+        "tags": [
+          "mutant"
+        ],
+        "summary": "Make a new test",
+        "description": "",
+        "operationId": "newTest",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "DNA structure",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DNA"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Is mutant"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Not is Mutant"
+          }
+        }
+      }
+    },
+    "/stats": {
+      "get": {
+        "tags": [
+          "stats"
+        ],
+        "summary": "Get stats mutants",
+        "description": "Get stats from test mutants",
+        "operationId": "stats",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Stats"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Stats": {
+      "type": "object",
+      "properties": {
+        "count_mutant_dna": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "count_human_dna": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ratio": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "DNA": {
+      "type": "object",
+      "required": [
+        "dna"
+      ],
+      "properties": {
+        "dna": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
