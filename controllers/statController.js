@@ -1,15 +1,20 @@
 const MutantService = require('../services/mutantService');
 const db = require('../lib/db/init');
+const cache = require('../cache/redis');
 
 const StatController = {};
 
 StatController.getStats = async (req, resp) => {
-  const { DNA } = await db.init();
   let result;
-  const dnaObject = await DNA.findAll();
+  let dnas = await cache.list('dna');
+  if (!dnas) {
+    const { DNA } = await db.init();
+    dnas = await DNA.findAll();
+    cache.upsert('dna', dnas);
+  }
 
-  if (dnaObject) {
-    result = MutantService.generateStats(dnaObject);
+  if (dnas) {
+    result = MutantService.generateStats(dnas);
   } else {
     result = {
       count_mutant_dna: 0,
