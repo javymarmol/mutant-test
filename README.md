@@ -57,7 +57,7 @@ Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (En
 ## Entregar:
 ● Instrucciones de funcionamiento (Libre, todas las que quiera)
 ● Código Fuente (En el formato que quiera, lo más estándar posible). 
-● URLdelaAPI(Nivel 2 y 3).
+● URL de la API(Nivel 2 y 3).
 
 ## Primeros pasos
 Para descargar el proyecto de forma local necesita ejecutar el siguiente comando: 
