@@ -22,6 +22,7 @@ MutantController.validateDNA = async (req, resp) => {
     } else {
       result = dnaObject.isMutant;
     }
+    cache.remove('dna');
     cache.upsert('dna', { dna, isMutant: result });
   }
 

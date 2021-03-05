@@ -59,7 +59,11 @@ Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (En
 ● Código Fuente (En el formato que quiera, lo más estándar posible). 
 ● URL de la API(Nivel 2 y 3).
 
-## Primeros pasos
+## URL API hosteada
+
+[https://mutant-test.javymarmol.com/](https://mutant-test.javymarmol.com/)
+
+## Primeros pasos local
 Para descargar el proyecto de forma local necesita ejecutar el siguiente comando: 
 
 ``$ git clone git@github.com:javymarmol/mutant-test.git`` 

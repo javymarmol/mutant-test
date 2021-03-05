@@ -18,10 +18,15 @@ const list = (table) => new Promise((resolve, reject) => {
   });
 });
 
-function get(table, id) {
+async function get(table, id) {
   const search = `${table}_${id}`;
   return list(search);
 }
+
+const remove = async (key) => {
+  client.del(key);
+  return true;
+};
 
 const upsert = async (table, data) => {
   let key = table;
@@ -36,4 +41,5 @@ module.exports = {
   list,
   get,
   upsert,
+  remove,
 };
